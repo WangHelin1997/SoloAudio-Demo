@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="SSR-Speech: Towards Stable, Safe and Robust Zero-shot Text-based Speech Editing and Synthesis">
-  <meta name="keywords" content="Speech Editing, Zero-shot TTS, Neural Codec Language Models">
+        content="SoloAudio: Target Sound Extraction with Language-oriented Audio Diffusion Transformer">
+  <meta name="keywords" content="Target sound extraction, Transformer, Language-oriented, Text-to-audio, Zero-shot, Few-shot">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SSR-Speech</title>
+  <title>SoloAudio</title>
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-L7749G0HJZ"></script>
@@ -41,39 +41,32 @@
     <div class="container  is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">SSR-Speech: Towards Stable, Safe and Robust Zero-shot Text-based Speech Editing and Synthesis</h1>
+          <h1 class="title is-1 publication-title">SoloAudio: Target Sound Extraction with Language-oriented Audio Diffusion Transformer</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://scholar.google.com/citations?user=I_V0zBMAAAAJ">Helin Wang*</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=pxFJcEEAAAAJ">Meng Yu</a><sup>2</sup>,</span>
-            <span class="author-block">
               <a href="https://scholar.google.com/citations?user=q6zeG8sAAAAJ">Jiarui Hai*</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=uUmSp1QAAAAJ">Chen Chen</a><sup>3</sup>,
+              <a href="https://scholar.google.com/citations?user=emtNw84AAAAJ">Yen-Ju Lu</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=Neo-1mIAAAAJ">Yuchen Hu</a><sup>3</sup>,
+              <a href="https://scholar.google.com/citations?user=n72wEIkAAAAJ">Karan Thakkar</a><sup>1</sup>,
             </span>
             <span class="author-block">
-                <a href="https://ieeexplore.ieee.org/author/37088756700">Rilin Chen</a><sup>2</sup>,
+                <a href="https://scholar.google.com/citations?user=DlbELYkAAAAJ">Mounya Elhilali</a><sup>1</sup>,
               </span>
               <span class="author-block">
-                <a href="https://scholar.google.com/citations?user=G43gXjIAAAAJ">Najim Dehak</a><sup>1</sup>,
-              </span>
-              <span class="author-block">
-                <a href="https://scholar.google.com/citations?user=tMY31_gAAAAJ">Dong Yu</a><sup>2</sup>
+                <a href="https://scholar.google.com/citations?user=G43gXjIAAAAJ">Najim Dehak</a><sup>1</sup>
               </span>
           </div>
 
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>Johns Hopkins University </span>
-            <span class="author-block"><sup>2</sup>Tencent AI Lab </span>
-            <span class="author-block"><sup>3</sup>Nanyang Technological University</span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>*</sup>Work done during an internship at Tencent AI Lab</span>
+            <span class="author-block"><sup>*</sup>Indicates equal contribution</span>
           </div>
 
           <div class="column has-text-centered">
@@ -86,7 +79,7 @@
                   </span>
                   <span>Paper</span>
                 </a>
-                <a href="https://github.com/WangHelin1997/SSR-Speech" class="external-link button is-normal is-rounded is-dark">
+                <a href="https://github.com/WangHelin1997/SoloAudio" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="fab fa-github"></i>
                   </span>
@@ -113,9 +106,9 @@
         <!-- <h2 class="title is-3">TL;DR</h2> -->
         <div class="content has-text-justified">
           <p>
-                <b>SSR-Speech</b> a neural codec autoregressive model designed for <b>stable</b>, <b>safe</b>, and <b>robust</b> zero-shot text-based <b>speech editing</b> and <b>text-to-speech synthesis</b>.
-                Our approach achieves the state-of-the-art performance in the RealEdit speech editing task and the LibriTTS text-to-speech task, surpassing previous methods. 
-                Furthermore, SSR-Speech excels in multi-span speech editing and also demonstrates remarkable robustness to background sounds.
+                <b>SSR-Speech</b> is a novel diffusion-based generative model for <b>target sound extraction</b>. 
+                Our approach trains latent diffusion models on audio, replacing the previous U-Net backbone with a skip-connected transformer that operates on latent features. SoloAudio supports both <b>audio</b>-oriented and <b>language</b>-oriented TSE by utilizing a CLAP model as the feature extractor for target sounds. 
+                Furthermore, SoloAudio leverages synthetic audio generated by state-of-the-art text-to-audio models for training, demonstrating strong generalization to <b>out-of-domain</b> data and <b>unseen</b> sound events.
           </p>
         </div>
 
@@ -130,8 +123,8 @@
     <div class="hero-body">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h2 class="title is-3">SSR-Speech</h2>
-          <img src="./static/images/pic1.png" class="interpolation-image" width="800"
+          <h2 class="title is-3">Diagram of SoloAudio</h2>
+          <img src="./static/images/pic.png" class="interpolation-image" width="600"
             alt="Interpolate start reference image." />
         </div>
       </div>
@@ -139,38 +132,6 @@
   </div>
 </section>
 
-<section class="hero teaser">
-    <div class="container is-max-desktop is-centered has-text-centered">
-      <div class="hero-body">
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            <h2 class="title is-3">Watermark Encodec</h2>
-            <img src="./static/images/pic2.png" class="interpolation-image" width="600"
-              alt="Interpolate start reference image." />
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-<section id="toc" class="section" style="padding-top: 0px;">
-  <div class="container  is-fluid">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Table of Contents</h2>
-        <div class="is-centered">
-          <ul>
-            <li><a href="#vc_fs"><b>Zero-shot Speech Editing</b></a></li>
-            <li><a href="#tts"><b>Zero-shot TTS</b></a></li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-
-  </div>
-</section>
 
 
 <section id="vc_fs" class="hero">
@@ -178,10 +139,9 @@
     <div class="container is-fluid">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h2 class="title is-3">Speech Editing: SSR-Speech v.s. Prior SotA</h2>
+          <h2 class="title is-3">TSE: SoloAudio v.s. Prior SotA</h2>
           <div class="content">
-            <p>All speakers are unseen during training. Utterances are from our RealEdit evaluation set, comprises audiobooks, YouTube videos, and Spotify podcasts. In the original paper of VoiceCraft, they run inference 10 times with
-                different margin parameters. We compare with this setting and also one inference time for SSR-Speech, VoiceCraft and FluentSpeech.</p>
+            <p>We test on real data of AudioSet eval dataset. 41 categories from the FSD Kaggle 2018 dataset are used here. Each category has 2 test samples.</p>
           </div>
         </div>
       </div>
@@ -189,711 +149,1876 @@
         <table class="table" style="background-color: transparent;">
           <thead>
             <tr>
-              <th align="center"><strong></span>Original Transcript</strong></th>
+              <th align="center"><strong></span>Text</strong></th>
               <th align="center"><strong>Original Recording</strong></th>
-              <th align="center"><strong>Target Transcript:</strong></th>
-              <th align="center"><strong><span class="icon"><i class="fas fa-magic"></i></span>SSR-Speech (once)</strong></th>
-              <th align="center"><strong>VoiceCraft (once)</strong></th>
-              <th align="center"><strong>VoiceCraft (10 times)</strong></th>
-              <th align="center"><strong>FluentSpeech (once)</strong></th>
+              <th align="center"><strong><span class="icon"><i class="fas fa-magic"></i></span>SoloAudio (ours)</strong></th>
+              <th align="center"><strong>DPM-TSE</strong></th>
+              <th align="center"><strong>WaveFormer</strong></th>
+              <th align="center"><strong>AudioSep</strong></th>
             </tr>
           </thead>
           <tbody>
       <tr>
-        <td width="28%" style="text-align: left;">Fast cars, that had the nice clothes, that had the money, they was
-          criminals.</td>
-        <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/show_1cOsDxbQjLADedwZaG7Bm1-6mLz726LYCcgN69RWWlrOJ.wav"
+        <td width="20%" style="text-align: left;">Acoustic guitar</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Acoustic_guitar/Y-2RPPODqLy4_mix.wav"
               type="audio/wav">
           </audio></td>
-        <td width="28%" style="text-align: left;">Fast cars, that had the nice clothes, <b>that had expensive gold watches,</b> that
-          had the money, they was criminals.</td>
-        <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/show_1cOsDxbQjLADedwZaG7Bm1-6mLz726LYCcgN69RWWlrOJ_ssr_ssrspeech.wav"
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Acoustic_guitar/Y-2RPPODqLy4_SoloAudio.wav"
               type="audio/wav">
           </audio></td>
-          <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/show_1cOsDxbQjLADedwZaG7Bm1-6mLz726LYCcgN69RWWlrOJ_ve_mytest.wav"
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Acoustic_guitar/Y-2RPPODqLy4_DPMTSE.wav"
               type="audio/wav">
           </audio></td>
-        <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/show_1cOsDxbQjLADedwZaG7Bm1-6mLz726LYCcgN69RWWlrOJ_ve.wav"
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Acoustic_guitar/Y-2RPPODqLy4_Waveformer.wav"
               type="audio/wav">
           </audio></td>
-        <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/show_1cOsDxbQjLADedwZaG7Bm1-6mLz726LYCcgN69RWWlrOJ_fs.wav"
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Acoustic_guitar/Y-2RPPODqLy4_AudioSep.wav"
               type="audio/wav">
           </audio></td>
       </tr>
       <tr>
-        <td width="28%" style="text-align: left;">We would just be open and willing to adopt whatever child God brought to her
-          life.</td>
-        <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/show_2cSm7FgVuDH3IbmSlWkZzH-0hFwD7TSXO5c69BPwJzOfx.wav"
+        <td width="20%" style="text-align: left;">Acoustic guitar</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Acoustic_guitar/Y-8cgbhIR_pw_mix.wav"
               type="audio/wav">
           </audio></td>
-        <td width="28%" style="text-align: left;">We would just be <b>excited to welcome</b> whatever child God brought into
-          her life.</td>
-        <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/show_2cSm7FgVuDH3IbmSlWkZzH-0hFwD7TSXO5c69BPwJzOfx_ssrspeech.wav"
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Acoustic_guitar/Y-8cgbhIR_pw_SoloAudio.wav"
               type="audio/wav">
           </audio></td>
-          <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/show_2cSm7FgVuDH3IbmSlWkZzH-0hFwD7TSXO5c69BPwJzOfx_ve_mytest.wav"
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Acoustic_guitar/Y-8cgbhIR_pw_DPMTSE.wav"
               type="audio/wav">
           </audio></td>
-        <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/show_2cSm7FgVuDH3IbmSlWkZzH-0hFwD7TSXO5c69BPwJzOfx_ve.wav"
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Acoustic_guitar/Y-8cgbhIR_pw_Waveformer.wav"
               type="audio/wav">
           </audio></td>
-        <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/show_2cSm7FgVuDH3IbmSlWkZzH-0hFwD7TSXO5c69BPwJzOfx_fs.wav"
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Acoustic_guitar/Y-8cgbhIR_pw_AudioSep.wav"
               type="audio/wav">
           </audio></td>
       </tr>
       <tr>
-        <td width="28%" style="text-align: left;">that's a bomb and that's a good sign from him. he got fully extended on it.
-          knew it as soon as that ball left.</td>
-        <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/YOU1000000113_S0000034.wav" type="audio/wav">
+        <td width="20%" style="text-align: left;">Applause</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Applause/Y-nJbGyPg6BY_mix.wav"
+              type="audio/wav">
           </audio></td>
-        <td width="28%" style="text-align: left;">that's a bomb and that's a good sign from him. <b>he clearly signalled and made
-          the play happen</b> as soon as that ball left.</td>
-        <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/YOU1000000113_S0000034_ssrspeech.wav" type="audio/wav">
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Applause/Y-nJbGyPg6BY_SoloAudio.wav"
+              type="audio/wav">
           </audio></td>
-        <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/YOU1000000113_S0000034_ve_mytest.wav" type="audio/wav">
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Applause/Y-nJbGyPg6BY_DPMTSE.wav"
+              type="audio/wav">
           </audio></td>
-          <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/YOU1000000113_S0000034_ve.wav" type="audio/wav">
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Applause/Y-nJbGyPg6BY_Waveformer.wav"
+              type="audio/wav">
           </audio></td>
-        <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/YOU1000000113_S0000034_fs.wav" type="audio/wav">
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Applause/Y-nJbGyPg6BY_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Applause</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Applause/Y-vBj0PZ1RF0_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Applause/Y-vBj0PZ1RF0_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Applause/Y-vBj0PZ1RF0_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Applause/Y-vBj0PZ1RF0_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Applause/Y-vBj0PZ1RF0_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Bark</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Bark/Y1_Q80fDGLRM_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Bark/Y1_Q80fDGLRM_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Bark/Y1_Q80fDGLRM_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Bark/Y1_Q80fDGLRM_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Bark/Y1_Q80fDGLRM_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Bark</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Bark/Y1MP3sQTk8wo_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Bark/Y1MP3sQTk8wo_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Bark/Y1MP3sQTk8wo_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Bark/Y1MP3sQTk8wo_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Bark/Y1MP3sQTk8wo_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Bass drum</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Bass_drum/Y-h5ZGw9Ci5c_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Bass_drum/Y-h5ZGw9Ci5c_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Bass_drum/Y-h5ZGw9Ci5c_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Bass_drum/Y-h5ZGw9Ci5c_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Bass_drum/Y-h5ZGw9Ci5c_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Bass drum</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Bass_drum/Y0hWIKYNSEPE_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Bass_drum/Y0hWIKYNSEPE_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Bass_drum/Y0hWIKYNSEPE_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Bass_drum/Y0hWIKYNSEPE_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Bass_drum/Y0hWIKYNSEPE_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Burping, eructation</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Burping_or_eructation/Y0W1En_XsDnM_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Burping_or_eructation/Y0W1En_XsDnM_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Burping_or_eructation/Y0W1En_XsDnM_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Burping_or_eructation/Y0W1En_XsDnM_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Burping_or_eructation/Y0W1En_XsDnM_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Burping, eructation</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Burping_or_eructation/Y2YW7WBtqzzQ_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Burping_or_eructation/Y2YW7WBtqzzQ_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Burping_or_eructation/Y2YW7WBtqzzQ_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Burping_or_eructation/Y2YW7WBtqzzQ_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Burping_or_eructation/Y2YW7WBtqzzQ_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Bus</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Bus/Y-3z5mFRgbxc_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Bus/Y-3z5mFRgbxc_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Bus/Y-3z5mFRgbxc_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Bus/Y-3z5mFRgbxc_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Bus/Y-3z5mFRgbxc_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Bus</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Bus/Y1hIg-Lsvc7Q_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Bus/Y1hIg-Lsvc7Q_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Bus/Y1hIg-Lsvc7Q_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Bus/Y1hIg-Lsvc7Q_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Bus/Y1hIg-Lsvc7Q_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Cello</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Cello/Y0eTrzI5-ong_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Cello/Y0eTrzI5-ong_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Cello/Y0eTrzI5-ong_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Cello/Y0eTrzI5-ong_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Cello/Y0eTrzI5-ong_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Cello</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Cello/Y0RZRFj7zDnQ_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Cello/Y0RZRFj7zDnQ_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Cello/Y0RZRFj7zDnQ_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Cello/Y0RZRFj7zDnQ_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Cello/Y0RZRFj7zDnQ_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Chime</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Chime/Y0c8754kaMq4_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Chime/Y0c8754kaMq4_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Chime/Y0c8754kaMq4_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Chime/Y0c8754kaMq4_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Chime/Y0c8754kaMq4_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Clarinet</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Clarinet/Y-_f_ClsDxyc_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Clarinet/Y-_f_ClsDxyc_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Clarinet/Y-_f_ClsDxyc_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Clarinet/Y-_f_ClsDxyc_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Clarinet/Y-_f_ClsDxyc_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Clarinet</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Clarinet/Y30JDrjDkoR8_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Clarinet/Y30JDrjDkoR8_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Clarinet/Y30JDrjDkoR8_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Clarinet/Y30JDrjDkoR8_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Clarinet/Y30JDrjDkoR8_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Computer keyboard</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Computer_keyboard/Y24tWz7gmngI_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Computer_keyboard/Y24tWz7gmngI_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Computer_keyboard/Y24tWz7gmngI_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Computer_keyboard/Y24tWz7gmngI_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Computer_keyboard/Y24tWz7gmngI_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Computer keyboard</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Computer_keyboard/Y3oYSlw6l0XA_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Computer_keyboard/Y3oYSlw6l0XA_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Computer_keyboard/Y3oYSlw6l0XA_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Computer_keyboard/Y3oYSlw6l0XA_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Computer_keyboard/Y3oYSlw6l0XA_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Cough</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Cough/Y130v5XJl8G0_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Cough/Y130v5XJl8G0_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Cough/Y130v5XJl8G0_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Cough/Y130v5XJl8G0_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Cough/Y130v5XJl8G0_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Cough</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Cough/Y1Xmw9VUzvLY_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Cough/Y1Xmw9VUzvLY_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Cough/Y1Xmw9VUzvLY_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Cough/Y1Xmw9VUzvLY_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Cough/Y1Xmw9VUzvLY_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Cowbell</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Cowbell/Y1O-WeYTRS4w_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Cowbell/Y1O-WeYTRS4w_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Cowbell/Y1O-WeYTRS4w_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Cowbell/Y1O-WeYTRS4w_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Cowbell/Y1O-WeYTRS4w_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Cowbell</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Cowbell/Y4pRlRU-LLDE_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Cowbell/Y4pRlRU-LLDE_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Cowbell/Y4pRlRU-LLDE_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Cowbell/Y4pRlRU-LLDE_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Cowbell/Y4pRlRU-LLDE_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Double bass</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Double_bass/2cdzl-g9d24_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Double_bass/2cdzl-g9d24_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Double_bass/2cdzl-g9d24_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Double_bass/2cdzl-g9d24_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Double_bass/2cdzl-g9d24_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Double bass</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Double_bass/yc1gh-876uf_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Double_bass/yc1gh-876uf_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Double_bass/yc1gh-876uf_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Double_bass/yc1gh-876uf_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Double_bass/yc1gh-876uf_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Drawer open, close</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Drawer_open_or_close/Y0bKpv6YBl7g_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Drawer_open_or_close/Y0bKpv6YBl7g_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Drawer_open_or_close/Y0bKpv6YBl7g_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Drawer_open_or_close/Y0bKpv6YBl7g_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Drawer_open_or_close/Y0bKpv6YBl7g_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Drawer open, close</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Drawer_open_or_close/Y1jq7zSF_v7s_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Drawer_open_or_close/Y1jq7zSF_v7s_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Drawer_open_or_close/Y1jq7zSF_v7s_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Drawer_open_or_close/Y1jq7zSF_v7s_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Drawer_open_or_close/Y1jq7zSF_v7s_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Electric piano</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Electric_piano/Y-5CGQGSFGyg_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Electric_piano/Y-5CGQGSFGyg_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Electric_piano/Y-5CGQGSFGyg_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Electric_piano/Y-5CGQGSFGyg_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Electric_piano/Y-5CGQGSFGyg_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Electric piano</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Electric_piano/Y2pV6t7CO0Bc_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Electric_piano/Y2pV6t7CO0Bc_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Electric_piano/Y2pV6t7CO0Bc_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Electric_piano/Y2pV6t7CO0Bc_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Electric_piano/Y2pV6t7CO0Bc_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Fart</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Fart/Y0QYedLfOwcI_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Fart/Y0QYedLfOwcI_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Fart/Y0QYedLfOwcI_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Fart/Y0QYedLfOwcI_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Fart/Y0QYedLfOwcI_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Fart</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Fart/Y3QVNpLUQsAk_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Fart/Y3QVNpLUQsAk_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Fart/Y3QVNpLUQsAk_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Fart/Y3QVNpLUQsAk_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Fart/Y3QVNpLUQsAk_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Finger snapping</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Finger_snapping/Y-0vPFx-wRRI_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Finger_snapping/Y-0vPFx-wRRI_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Finger_snapping/Y-0vPFx-wRRI_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Finger_snapping/Y-0vPFx-wRRI_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Finger_snapping/Y-0vPFx-wRRI_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Finger snapping</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Finger_snapping/Y4G9OxASMGKE_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Finger_snapping/Y4G9OxASMGKE_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Finger_snapping/Y4G9OxASMGKE_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Finger_snapping/Y4G9OxASMGKE_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Finger_snapping/Y4G9OxASMGKE_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Fireworks</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Fireworks/Y18212B4yfLg_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Fireworks/Y18212B4yfLg_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Fireworks/Y18212B4yfLg_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Fireworks/Y18212B4yfLg_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Fireworks/Y18212B4yfLg_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Fireworks</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Fireworks/Y2YXcqoFlYFY_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Fireworks/Y2YXcqoFlYFY_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Fireworks/Y2YXcqoFlYFY_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Fireworks/Y2YXcqoFlYFY_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Fireworks/Y2YXcqoFlYFY_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Flute</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Flute/Y-sbrgNGuWXE_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Flute/Y-sbrgNGuWXE_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Flute/Y-sbrgNGuWXE_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Flute/Y-sbrgNGuWXE_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Flute/Y-sbrgNGuWXE_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Flute</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Flute/Y0XFFOBzJ3aw_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Flute/Y0XFFOBzJ3aw_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Flute/Y0XFFOBzJ3aw_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Flute/Y0XFFOBzJ3aw_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Flute/Y0XFFOBzJ3aw_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Glockenspiel</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Glockenspiel/Y-WIDMrHskbI_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Glockenspiel/Y-WIDMrHskbI_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Glockenspiel/Y-WIDMrHskbI_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Glockenspiel/Y-WIDMrHskbI_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Glockenspiel/Y-WIDMrHskbI_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Glockenspiel</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Glockenspiel/Y20Qksqlj4dc_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Glockenspiel/Y20Qksqlj4dc_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Glockenspiel/Y20Qksqlj4dc_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Glockenspiel/Y20Qksqlj4dc_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Glockenspiel/Y20Qksqlj4dc_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Gong</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Gong/Y-Y8sJDoL1YA_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Gong/Y-Y8sJDoL1YA_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Gong/Y-Y8sJDoL1YA_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Gong/Y-Y8sJDoL1YA_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Gong/Y-Y8sJDoL1YA_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Gong</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Gong/Y2FrXzcm4YMc_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Gong/Y2FrXzcm4YMc_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Gong/Y2FrXzcm4YMc_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Gong/Y2FrXzcm4YMc_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Gong/Y2FrXzcm4YMc_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Gunshot, gunfile</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Gunshot_or_gunfire/Y-inB65exXFU_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Gunshot_or_gunfire/Y-inB65exXFU_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Gunshot_or_gunfire/Y-inB65exXFU_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Gunshot_or_gunfire/Y-inB65exXFU_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Gunshot_or_gunfire/Y-inB65exXFU_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Gunshot, gunfile</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Gunshot_or_gunfire/Y0YTieIiZNN4_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Gunshot_or_gunfire/Y0YTieIiZNN4_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Gunshot_or_gunfire/Y0YTieIiZNN4_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Gunshot_or_gunfire/Y0YTieIiZNN4_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Gunshot_or_gunfire/Y0YTieIiZNN4_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Harmonica</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Harmonica/Y2vYkvwD-fkc_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Harmonica/Y2vYkvwD-fkc_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Harmonica/Y2vYkvwD-fkc_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Harmonica/Y2vYkvwD-fkc_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Harmonica/Y2vYkvwD-fkc_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Harmonica</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Harmonica/Y8u-6LzNtkpQ_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Harmonica/Y8u-6LzNtkpQ_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Harmonica/Y8u-6LzNtkpQ_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Harmonica/Y8u-6LzNtkpQ_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Harmonica/Y8u-6LzNtkpQ_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Hi-hat</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Hi-hat/Y0LY5zuRlIac_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Hi-hat/Y0LY5zuRlIac_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Hi-hat/Y0LY5zuRlIac_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Hi-hat/Y0LY5zuRlIac_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Hi-hat/Y0LY5zuRlIac_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Hi-hat</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Hi-hat/Y1q8kkQhS97g_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Hi-hat/Y1q8kkQhS97g_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Hi-hat/Y1q8kkQhS97g_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Hi-hat/Y1q8kkQhS97g_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Hi-hat/Y1q8kkQhS97g_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Keys jangling</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Keys_jangling/Y0cZQm65sZjc_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Keys_jangling/Y0cZQm65sZjc_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Keys_jangling/Y0cZQm65sZjc_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Keys_jangling/Y0cZQm65sZjc_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Keys_jangling/Y0cZQm65sZjc_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Keys jangling</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Keys_jangling/Y1btWmt9io-Y_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Keys_jangling/Y1btWmt9io-Y_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Keys_jangling/Y1btWmt9io-Y_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Keys_jangling/Y1btWmt9io-Y_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Keys_jangling/Y1btWmt9io-Y_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Knock</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Knock/Y-wiXdIMwM-I_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Knock/Y-wiXdIMwM-I_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Knock/Y-wiXdIMwM-I_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Knock/Y-wiXdIMwM-I_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Knock/Y-wiXdIMwM-I_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Laughter</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Laughter/Y2tXE7snh6Ak_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Laughter/Y2tXE7snh6Ak_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Laughter/Y2tXE7snh6Ak_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Laughter/Y2tXE7snh6Ak_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Laughter/Y2tXE7snh6Ak_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Laughter</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Laughter/Y4AWUlyZP_CM_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Laughter/Y4AWUlyZP_CM_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Laughter/Y4AWUlyZP_CM_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Laughter/Y4AWUlyZP_CM_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Laughter/Y4AWUlyZP_CM_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Meow</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Meow/Y-vZ-_4oFCzs_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Meow/Y-vZ-_4oFCzs_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Meow/Y-vZ-_4oFCzs_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Meow/Y-vZ-_4oFCzs_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Meow/Y-vZ-_4oFCzs_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Meow</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Meow/Y-ZJqu_4zLMc_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Meow/Y-ZJqu_4zLMc_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Meow/Y-ZJqu_4zLMc_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Meow/Y-ZJqu_4zLMc_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Meow/Y-ZJqu_4zLMc_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Microwave oven</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Microwave_oven/Y-BY64_p-vtM_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Microwave_oven/Y-BY64_p-vtMc_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Microwave_oven/Y-BY64_p-vtM_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Microwave_oven/Y-BY64_p-vtM_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Microwave_oven/Y-BY64_p-vtM_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Microwave oven</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Microwave_oven/Y2STASUlGAjs_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Microwave_oven/Y2STASUlGAjs_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Microwave_oven/Y2STASUlGAjs_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Microwave_oven/Y2STASUlGAjs_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Microwave_oven/Y2STASUlGAjs_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Oboe</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Oboe/1813h-nuo6u_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Oboe/1813h-nuo6u_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Oboe/1813h-nuo6u_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Oboe/1813h-nuo6u_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Oboe/1813h-nuo6u_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Oboe</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Oboe/jrlb7-u4zsj_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Oboe/jrlb7-u4zsj_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Oboe/jrlb7-u4zsj_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Oboe/jrlb7-u4zsj_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Oboe/jrlb7-u4zsj_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Saxophone</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Saxophone/Y-4viN_EoxOA_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Saxophone/Y-4viN_EoxOA_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Saxophone/Y-4viN_EoxOA_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Saxophone/Y-4viN_EoxOA_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Saxophone/Y-4viN_EoxOA_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Saxophone</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Saxophone/Y1nbCJJtsruI_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Saxophone/Y1nbCJJtsruI_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Saxophone/Y1nbCJJtsruI_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Saxophone/Y1nbCJJtsruI_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Saxophone/Y1nbCJJtsruI_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Scissors</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Scissors/Y-eabL1vJMt0_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Scissors/Y-eabL1vJMt0_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Scissors/Y-eabL1vJMt0_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Scissors/Y-eabL1vJMt0_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Scissors/Y-eabL1vJMt0_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Scissors</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Scissors/Y10DM6WINIS8_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Scissors/Y10DM6WINIS8_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Scissors/Y10DM6WINIS8_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Scissors/Y10DM6WINIS8_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Scissors/Y10DM6WINIS8_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Shatter</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Shatter/Y-Cdx8zogHI0_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Shatter/Y-Cdx8zogHI0_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Shatter/Y-Cdx8zogHI0_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Shatter/Y-Cdx8zogHI0_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Shatter/Y-Cdx8zogHI0_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Shatter</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Shatter/Y2zdYIRTUQYE_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Shatter/Y2zdYIRTUQYE_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Shatter/Y2zdYIRTUQYE_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Shatter/Y2zdYIRTUQYE_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Shatter/Y2zdYIRTUQYE_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Snare drum</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Snare_drum/Y1rJWW_KqeAw_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Snare_drum/Y1rJWW_KqeAw_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Snare_drum/Y1rJWW_KqeAw_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Snare_drum/Y1rJWW_KqeAw_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Snare_drum/Y1rJWW_KqeAw_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Snare drum</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Snare_drum/Y2CidaVnd60g_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Snare_drum/Y2CidaVnd60g_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Snare_drum/Y2CidaVnd60g_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Snare_drum/Y2CidaVnd60g_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Snare_drum/Y2CidaVnd60g_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Squeak</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Squeak/Y-s8GfWT7_I0_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Squeak/Y-s8GfWT7_I0_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Squeak/Y-s8GfWT7_I0_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Squeak/Y-s8GfWT7_I0_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Squeak/Y-s8GfWT7_I0_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Squeak</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Squeak/Y-yc2dgZAkgM_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Squeak/Y-yc2dgZAkgM_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Squeak/Y-yc2dgZAkgM_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Squeak/Y-yc2dgZAkgM_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Squeak/Y-yc2dgZAkgM_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Tambourine</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Tambourine/Y3I3HZLx23E0_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Tambourine/Y3I3HZLx23E0_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Tambourine/Y3I3HZLx23E0_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Tambourine/Y3I3HZLx23E0_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Tambourine/Y3I3HZLx23E0_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Tambourine</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Tambourine/Y55JJBmhOa9g_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Tambourine/Y55JJBmhOa9g_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Tambourine/Y55JJBmhOa9g_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Tambourine/Y55JJBmhOa9g_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Tambourine/Y55JJBmhOa9g_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Tearing</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Tearing/Y0hUft9scxzY_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Tearing/Y0hUft9scxzY_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Tearing/Y0hUft9scxzY_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Tearing/Y0hUft9scxzY_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Tearing/Y0hUft9scxzY_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Tearing</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Tearing/Y4lbqfOxogSs_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Tearing/Y4lbqfOxogSs_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Tearing/Y4lbqfOxogSs_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Tearing/Y4lbqfOxogSs_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Tearing/Y4lbqfOxogSs_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Telephone</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Telephone/Y-36qTeAdDMI_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Telephone/Y-36qTeAdDMI_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Telephone/Y-36qTeAdDMI_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Telephone/Y-36qTeAdDMI_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Telephone/Y-36qTeAdDMI_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Telephone</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Telephone/Y-nv4LwXRnCg_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Telephone/Y-nv4LwXRnCg_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Telephone/Y-nv4LwXRnCg_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Telephone/Y-nv4LwXRnCg_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Telephone/Y-nv4LwXRnCg_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Trumpet</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Trumpet/Y-l-E3kyNcag_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Trumpet/Y-l-E3kyNcag_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Trumpet/Y-l-E3kyNcag_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Trumpet/Y-l-E3kyNcag_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Trumpet/Y-l-E3kyNcag_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Trumpet</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Trumpet/Y007P6bFgRCU_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Trumpet/Y007P6bFgRCU_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Trumpet/Y007P6bFgRCU_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Trumpet/Y007P6bFgRCU_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Trumpet/Y007P6bFgRCU_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Violin, fiddle</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Violin_or_fiddle/Y0jiu0RNizU8_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Violin_or_fiddle/Y0jiu0RNizU8_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Violin_or_fiddle/Y0jiu0RNizU8_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Violin_or_fiddle/Y0jiu0RNizU8_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Violin_or_fiddle/Y0jiu0RNizU8_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Violin, fiddle</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Violin_or_fiddle/Y5A0sMC5olxI_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Violin_or_fiddle/Y5A0sMC5olxI_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Violin_or_fiddle/Y5A0sMC5olxI_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Violin_or_fiddle/Y5A0sMC5olxI_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Violin_or_fiddle/Y5A0sMC5olxI_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Writing</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Writing/Y0lPip_ffJbk_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Writing/Y0lPip_ffJbk_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Writing/Y0lPip_ffJbk_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Writing/Y0lPip_ffJbk_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Writing/Y0lPip_ffJbk_AudioSep.wav"
+              type="audio/wav">
+          </audio></td>
+      </tr>
+      <tr>
+        <td width="20%" style="text-align: left;">Writing</td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Writing/Y7c6ZTF6cF88_mix.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Writing/Y7c6ZTF6cF88_SoloAudio.wav"
+              type="audio/wav">
+          </audio></td>
+          <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Writing/Y7c6ZTF6cF88_DPMTSE.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Writing/Y7c6ZTF6cF88_Waveformer.wav"
+              type="audio/wav">
+          </audio></td>
+        <td width="20%" style="text-align: center;"><audio controls="">
+            <source src="static/audio_sample/tse/Writing/Y7c6ZTF6cF88_AudioSep.wav"
+              type="audio/wav">
           </audio></td>
       </tr>
 
-    <tr>
-      <td width="28%" style="text-align: left;">economic development remains one of the most effective ways to increase the
-        capacity to adapt to climate change.</td>
-      <td width="12%" style="text-align: center;"><audio controls="">
-          <source src="static/audio_sample/speech_editing/YOU1000000127_S0000064.wav" type="audio/wav">
-        </audio></td>
-      <td width="28%" style="text-align: left;">economic development remains one of the most <b>promising options that we have
-        left on the table</b> to increase the capacity to adapt to climate change.</td>
-      <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/YOU1000000127_S0000064_ssrspeech.wav" type="audio/wav">
-          </audio></td>
-          <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/YOU1000000127_S0000064_ve_mytest.wav" type="audio/wav">
-          </audio></td>
-      <td width="12%" style="text-align: center;"><audio controls="">
-          <source src="static/audio_sample/speech_editing/YOU1000000127_S0000064_ve.wav" type="audio/wav">
-        </audio></td>
-      <td width="12%" style="text-align: center;"><audio controls="">
-          <source src="static/audio_sample/speech_editing/YOU1000000127_S0000064_fs.wav" type="audio/wav">
-        </audio></td>
-    </tr>
-
-
-      <tr>
-        <td width="28%" style="text-align: left;">So if you've been following my story, you will remember that I said earlier
-          in this podcast that the Grammy nominations came out.</td>
-        <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/show_2ctsjdVxkuzqftlC9TJASy-6iadzuoEBJ9AOLXaXPmagP.wav"
-              type="audio/wav">
-          </audio></td>
-        <td width="28%" style="text-align: left;">So if you've been following my story, you will remember that I said earlier
-          <b>that this week we had super exciting stuff to talk about because</b> Grammy nominations came out.</td>
-        <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/show_2ctsjdVxkuzqftlC9TJASy-6iadzuoEBJ9AOLXaXPmagP_ssrspeech.wav"
-              type="audio/wav">
-          </audio></td>
-          <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/show_2ctsjdVxkuzqftlC9TJASy-6iadzuoEBJ9AOLXaXPmagP_ve_mytest.wav"
-              type="audio/wav">
-          </audio></td>
-        <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/show_2ctsjdVxkuzqftlC9TJASy-6iadzuoEBJ9AOLXaXPmagP_ve.wav"
-              type="audio/wav">
-          </audio></td>
-        <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/show_2ctsjdVxkuzqftlC9TJASy-6iadzuoEBJ9AOLXaXPmagP_fs.wav"
-              type="audio/wav">
-          </audio></td>
-      </tr>
-      <tr>
-        <td width="28%" style="text-align: left;">because we can include so many other characters if we just expand the
-          definitions to any sword wielder, who's a little spicy.</td>
-        <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/YOU1000000023_S0000047.wav" type="audio/wav">
-          </audio></td>
-        <td width="28%" style="text-align: left;">because we can include so many other <b>participants if we are brave enough</b> to
-          expand the definitions to any <b>blade</b> wielder, who's a little spicy.</td>
-        <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/YOU1000000023_S0000047_ssrspeech.wav" type="audio/wav">
-          </audio></td>
-          <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/YOU1000000023_S0000047_ve_mytest.wav" type="audio/wav">
-          </audio></td>
-        <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/YOU1000000023_S0000047_ve.wav" type="audio/wav">
-          </audio></td>
-        <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/YOU1000000023_S0000047_fs.wav" type="audio/wav">
-          </audio></td>
-      </tr>
-      <tr>
-        <td width="28%" style="text-align: left;">It was a glance of inquiry, ending in a look of chagrin, with some muttered
-          phrases that rendered it more emphatic.</td>
-        <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/4153_61735_000020_000001.wav" type="audio/wav">
-          </audio></td>
-        <td width="28%" style="text-align: left;">It was a <b>look of disgust followed by a curled lip,</b> with some muttered
-          phrases that rendered it more emphatic.</td>
-        <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/4153_61735_000020_000001_ssrspeech.wav" type="audio/wav">
-          </audio></td>
-          <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/4153_61735_000020_000001_ve_mytest.wav" type="audio/wav">
-          </audio></td>
-        <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/4153_61735_000020_000001_ve.wav" type="audio/wav">
-          </audio></td>
-        <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/4153_61735_000020_000001_fs.wav" type="audio/wav">
-          </audio></td>
-      </tr>
-
-        <tr>
-            <td width="28%" style="text-align: left;">some times i really feel that the world around us continues to be more
-            hectic and more complicated and so many of us are truly craving to find simplicity.</td>
-            <td width="12%" style="text-align: center;"><audio controls="">
-                <source src="static/audio_sample/speech_editing/YOU1000000153_S0000000.wav" type="audio/wav">
-            </audio></td>
-            <td width="28%" style="text-align: left;">some times i really feel that the world around us continues to be more
-            <b>hectic, more impersonal, and more uncaring</b> and so many of us are truly craving to find simplicity.</td>
-            <td width="12%" style="text-align: center;"><audio controls="">
-                <source src="static/audio_sample/speech_editing/YOU1000000153_S0000000_ssrspeech.wav" type="audio/wav">
-            </audio></td>
-            <td width="12%" style="text-align: center;"><audio controls="">
-                <source src="static/audio_sample/speech_editing/YOU1000000153_S0000000_ve_mytest.wav" type="audio/wav">
-            </audio></td>
-            <td width="12%" style="text-align: center;"><audio controls="">
-                <source src="static/audio_sample/speech_editing/YOU1000000153_S0000000_ve.wav" type="audio/wav">
-            </audio></td>
-            <td width="12%" style="text-align: center;"><audio controls="">
-                <source src="static/audio_sample/speech_editing/YOU1000000153_S0000000_fs.wav" type="audio/wav">
-            </audio></td>
-        </tr>
-
-      <tr>
-        <td width="28%" style="text-align: left;">For making the title though because I need to get my numbers way up before I
-          get there, but I'm gonna get there title of Iceland is definitely going to sign me and um, yeah.</td>
-        <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/show_2cGQMNoS6MuKFozuNYjCOQ-6qmAgAKLoYpSknCgQ0y6ET.wav"
-              type="audio/wav">
-          </audio></td>
-        <td width="28%" style="text-align: left;">For making the title though because I need to get my numbers way up before I
-          get there, but I'm gonna get there title of Iceland <b>is going</b> to sign me and um, yeah.</td>
-        <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/show_2cGQMNoS6MuKFozuNYjCOQ-6qmAgAKLoYpSknCgQ0y6ET_ssrspeech.wav"
-              type="audio/wav">
-          </audio></td>
-          <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/show_2cGQMNoS6MuKFozuNYjCOQ-6qmAgAKLoYpSknCgQ0y6ET_ve_mytest.wav"
-              type="audio/wav">
-          </audio></td>
-        <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/show_2cGQMNoS6MuKFozuNYjCOQ-6qmAgAKLoYpSknCgQ0y6ET_ve.wav"
-              type="audio/wav">
-          </audio></td>
-        <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/show_2cGQMNoS6MuKFozuNYjCOQ-6qmAgAKLoYpSknCgQ0y6ET_fs.wav"
-              type="audio/wav">
-          </audio></td>
-      </tr>
-      <tr>
-        <td width="28%" style="text-align: left;">they knew that governments don't control things. a government can't control
-          the economy without controlling people.</td>
-        <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/YOU1000000101_S0000060.wav" type="audio/wav">
-          </audio></td>
-        <td width="28%" style="text-align: left;">they knew that governments don't control <b>money directly</b>. a government can't
-          control the economy without controlling people.</td>
-        <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/YOU1000000101_S0000060_ssrspeech.wav" type="audio/wav">
-          </audio></td>
-          <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/YOU1000000101_S0000060_ve_mytest.wav" type="audio/wav">
-          </audio></td>
-        <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/YOU1000000101_S0000060_ve.wav" type="audio/wav">
-          </audio></td>
-        <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/YOU1000000101_S0000060_fs.wav" type="audio/wav">
-          </audio></td>
-      </tr>
-
- 
-      <tr>
-        <td width="28%" style="text-align: left;">No words just lightning breaking darkness and crashing into the Earth with
-          brilliant presence.</td>
-        <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/show_2t5PIVQePC6L3CFRpAUnaf-0f0tl83ucovdSpJHoftEU5.wav"
-              type="audio/wav">
-          </audio></td>
-        <td width="28%" style="text-align: left;">No words just lightning breaking darkness and crashing into <b>the surface of</b>
-          the Earth with brilliant presence.</td>
-        <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/show_2t5PIVQePC6L3CFRpAUnaf-0f0tl83ucovdSpJHoftEU5_ssrspeech.wav"
-              type="audio/wav">
-              <td width="12%" style="text-align: center;"><audio controls="">
-                <source src="static/audio_sample/speech_editing/show_2t5PIVQePC6L3CFRpAUnaf-0f0tl83ucovdSpJHoftEU5_ve_mytest.wav"
-                  type="audio/wav">
-              </audio></td>
-        <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/show_2t5PIVQePC6L3CFRpAUnaf-0f0tl83ucovdSpJHoftEU5_ve.wav"
-              type="audio/wav">
-          </audio></td>
-        <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/show_2t5PIVQePC6L3CFRpAUnaf-0f0tl83ucovdSpJHoftEU5_fs.wav"
-              type="audio/wav">
-          </audio></td>
-      </tr>
-
-      <tr>
-        <td width="28%" style="text-align: left;">that schedule is one per week and it will probably be like a Wednesday night
-          thing because I plan on doing one to two videos per week.</td>
-        <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/show_2cDEjUoE1xIZqEMHdy2iLg-3BhVKbLFPasrUOxLgZNUbd.wav"
-              type="audio/wav">
-          </audio></td>
-        <td width="28%" style="text-align: left;">that schedule is one per week and <b>you will start to see a lot more content
-          arriving</b> because I plan on doing one to two videos per week.</td>
-          <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/show_2cDEjUoE1xIZqEMHdy2iLg-3BhVKbLFPasrUOxLgZNUbd_ssrspeech.wav"
-              type="audio/wav">
-          </audio></td>
-          <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/show_2cDEjUoE1xIZqEMHdy2iLg-3BhVKbLFPasrUOxLgZNUbd_ve_mytest.wav"
-              type="audio/wav">
-          </audio></td>
-        <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/show_2cDEjUoE1xIZqEMHdy2iLg-3BhVKbLFPasrUOxLgZNUbd_ve.wav"
-              type="audio/wav">
-          </audio></td>
-        <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/show_2cDEjUoE1xIZqEMHdy2iLg-3BhVKbLFPasrUOxLgZNUbd_fs.wav"
-              type="audio/wav">
-          </audio></td>
-      </tr>
-      <tr>
-        <td width="28%" style="text-align: left;">in a case like this, i probably wouldn't spend any more time looking at the
-          deal if i was only interested in the cash flow.</td>
-        <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/YOU1000000155_S0000027.wav" type="audio/wav">
-          </audio></td>
-        <td width="28%" style="text-align: left;">in a case like this, i probably wouldn't spend any more time looking at <b>all
-          the details and the fine print</b> if i was only interested in the cash flow.</td>
-          <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/YOU1000000155_S0000027_ssrspeech.wav" type="audio/wav">
-          </audio></td>
-          <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/YOU1000000155_S0000027_ve_mytest.wav" type="audio/wav">
-          </audio></td>
-        <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/YOU1000000155_S0000027_ve.wav" type="audio/wav">
-          </audio></td>
-        <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/YOU1000000155_S0000027_fs.wav" type="audio/wav">
-          </audio></td>
-      </tr>
-      <tr>
-        <td width="28%" style="text-align: left;">but the renaissance broke their monopoly on knowledge, one of the most
-          important bastions of the church.</td>
-        <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/YOU1000000137_S0000397.wav" type="audio/wav">
-          </audio></td>
-        <td width="28%" style="text-align: left;">but the renaissance broke their monopoly on knowledge, <b>with it's free
-          movement of research and endless scientific inquiry,</b> one of the most important bastions of the church.</td>
-          <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/YOU1000000137_S0000397_ssrspeech.wav" type="audio/wav">
-          </audio></td>
-          <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/YOU1000000137_S0000397_ve_mytest.wav" type="audio/wav">
-          </audio></td>
-        <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/YOU1000000137_S0000397_ve.wav" type="audio/wav">
-          </audio></td>
-        <td width="12%" style="text-align: center;"><audio controls="">
-            <source src="static/audio_sample/speech_editing/YOU1000000137_S0000397_fs.wav" type="audio/wav">
-          </audio></td>
-      </tr>
             </tbody>
         </table>
       </div>
-              <div class="columns is-centered has-text-centered">
-                <div class="column is-four-fifths">
-                  <a href="#toc" class="button is-primary">Go Back to Table of Contents</a>
-                </div>
-              </div>
     </div>
   </div>
 </section>
 
 
-<section id="tts" class="hero ">
-  <div class="hero-body">
-    <div class="container is-fluid">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Zero-Shot TTS: SSR-Speech v.s. Prior SotA</h2>
-          <div class="content">
-            <p>All speakers are unseen during training. Only the first 3 seconds of the Voice Prompt are given to the models. In the original paper of VoiceCraft, they run inference 5 times with
-              different random seeds. We compare with this setting and also one inference time for SSR-Speech, VoiceCraft, VALL-E, XTTS v2 and FluentSpeech.</p>
-          </div>
-        </div>
-      </div>
-      <div class="columns is-centered has-text-centered">
-        <table class="table" style="background-color: transparent;">
-          <thead>
-            <tr>
-              <th align="center"><strong></span>Traget Transcript</strong></th>
-              <th align="center"><strong>Voice Prompt (only the first 3 seconds is used)</strong></th>
-              <th align="center"><strong><span class="icon"><i class="fas fa-magic"></i></span>SSR-Speech (Once)</strong></th>
-              <th align="center"><strong>VoiceCraft (Once)</strong></th>
-              <th align="center"><strong>VoiceCraft (5 times)</strong></th>
-              <th align="center"><strong>VALL-E (Once)</strong></th>
-              <th align="center"><strong>XTTS v2 (Once)</strong></th>
-              <th align="center"><strong>FluentSpeech (Once)</strong></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td width="28%" style="text-align: left;">we voted it out that was a standard that people used till eleven or little
-                bit past eleven um and it was an international standard.</td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000171_S0000062_prompt.wav" type="audio/wav">
-                </audio></td>
-                <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000171_S0000062_ssrspeech.wav" type="audio/wav">
-                </audio></td>
-                <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000171_S0000062_ve_mytest.wav" type="audio/wav">
-                </audio></td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000171_S0000062_ve.wav" type="audio/wav">
-                </audio></td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000171_S0000062_valle.wav" type="audio/wav">
-                </audio></td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000171_S0000062_xtts.wav" type="audio/wav">
-                </audio></td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000171_S0000062_fs.wav" type="audio/wav">
-                </audio></td>
-            </tr>
-            <tr>
-              <td width="28%" style="text-align: left;">hey you all, my name is corey ash and, and i know that you have been working
-                really hard to try to figure out</td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000005_S0000000_prompt.wav" type="audio/wav">
-                </audio></td>
-                <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000005_S0000000_ssrspeech.wav" type="audio/wav">
-                </audio></td>
-                <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000005_S0000000_ve_mytest.wav" type="audio/wav">
-                </audio></td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000005_S0000000_ve.wav" type="audio/wav">
-                </audio></td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000005_S0000000_valle.wav" type="audio/wav">
-                </audio></td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000005_S0000000_xtts.wav" type="audio/wav">
-                </audio></td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000005_S0000000_fs.wav" type="audio/wav">
-                </audio></td>
-            </tr>
-            <tr>
-              <td width="28%" style="text-align: left;">i'm pleading the fifth about my shoeless state at the moment. but what if
-                you learned about yourselves in this time and and what has changed about the way that you're working?</td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000185_S0000130_prompt.wav" type="audio/wav">
-                </audio></td>
-                <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000185_S0000130_ssrspeech.wav" type="audio/wav">
-                </audio></td>
-                <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000185_S0000130_ve_mytest.wav" type="audio/wav">
-                </audio></td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000185_S0000130_ve.wav" type="audio/wav">
-                </audio></td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000185_S0000130_valle.wav" type="audio/wav">
-                </audio></td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000185_S0000130_xtts.wav" type="audio/wav">
-                </audio></td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000185_S0000130_fs.wav" type="audio/wav">
-                </audio></td>
-            </tr>
-            <tr>
-              <td width="28%" style="text-align: left;">Do you know I was so foolish that I thought every flash of lightning must
-                descend on your head.</td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/1630_73710_000014_000008_prompt.wav" type="audio/wav">
-                </audio></td>
-                <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/1630_73710_000014_000008_ssrspeech.wav" type="audio/wav">
-                </audio></td>
-                <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/1630_73710_000014_000008_ve_mytest.wav" type="audio/wav">
-                </audio></td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/1630_73710_000014_000008_ve.wav" type="audio/wav">
-                </audio></td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/1630_73710_000014_000008_valle.wav" type="audio/wav">
-                </audio></td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/1630_73710_000014_000008_xtts.wav" type="audio/wav">
-                </audio></td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/1630_73710_000014_000008_fs.wav" type="audio/wav">
-                </audio></td>
-            </tr>
-            <tr>
-              <td width="28%" style="text-align: left;">Quox did not have much to say until the conversation was ended, but then he
-                turned to Kaliko and asked:</td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/1272_135031_000026_000002_prompt.wav" type="audio/wav">
-                </audio></td>
-                <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/1272_135031_000026_000002_ssrspeech.wav" type="audio/wav">
-                </audio></td>
-                <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/1272_135031_000026_000002_ve_mytest.wav" type="audio/wav">
-                </audio></td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/1272_135031_000026_000002_ve.wav" type="audio/wav">
-                </audio></td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/1272_135031_000026_000002_valle.wav" type="audio/wav">
-                </audio></td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/1272_135031_000026_000002_xtts.wav" type="audio/wav">
-                </audio></td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/1272_135031_000026_000002_fs.wav" type="audio/wav">
-                </audio></td>
-            </tr>
-            <tr>
-              <td width="28%" style="text-align: left;">you know it's one thing to kind of be home alone but it's another to know
-                that you have, you know zoom, yoga classes with friend of yours.</td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000117_S0000096_prompt.wav" type="audio/wav">
-                </audio></td>
-                <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000117_S0000096_ssrspeech.wav" type="audio/wav">
-                </audio></td>
-                <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000117_S0000096_ve_mytest.wav" type="audio/wav">
-                </audio></td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000117_S0000096_ve.wav" type="audio/wav">
-                </audio></td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000117_S0000096_valle.wav" type="audio/wav">
-                </audio></td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000117_S0000096_xtts.wav" type="audio/wav">
-                </audio></td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000117_S0000096_fs.wav" type="audio/wav">
-                </audio></td>
-            </tr>
-            <tr>
-              <td width="28%" style="text-align: left;">at its base, raider one is a four wheel drive polaris, MVRS 700, that controllers can operate nearly one thousand yards away.</td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000173_S0000177_prompt.wav" type="audio/wav">
-                </audio></td>
-                <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000173_S0000177_ssrspeech.wav" type="audio/wav">
-                </audio></td>
-                <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000173_S0000177_ve_mytest.wav" type="audio/wav">
-                </audio></td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000173_S0000177_ve.wav" type="audio/wav">
-                </audio></td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000173_S0000177_valle.wav" type="audio/wav">
-                </audio></td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000173_S0000177_xtts.wav" type="audio/wav">
-                </audio></td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000173_S0000177_fs.wav" type="audio/wav">
-                </audio></td>
-            </tr>
 
-            <tr>
-              <td width="28%" style="text-align: left;">We clambered up to the front seat and jolted off past the little pond and
-                along the road that climbed to the big cornfield.</td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/1988_147956_000001_000003_prompt.wav" type="audio/wav">
-                </audio></td>
-                <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/1988_147956_000001_000003_ssrspeech.wav" type="audio/wav">
-                </audio></td>
-                <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/1988_147956_000001_000003_ve_mytest.wav" type="audio/wav">
-                </audio></td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/1988_147956_000001_000003_ve.wav" type="audio/wav">
-                </audio></td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/1988_147956_000001_000003_valle.wav" type="audio/wav">
-                </audio></td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/1988_147956_000001_000003_xtts.wav" type="audio/wav">
-                </audio></td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/1988_147956_000001_000003_fs.wav" type="audio/wav">
-                </audio></td>
-            </tr>
-            
-            <tr>
-              <td width="28%" style="text-align: left;">We were the only ones who did go afoot, however, although the corrals were not more than two hundred yards' distant.</td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/6841_88291_000006_000000_prompt.wav" type="audio/wav">
-                </audio></td>
-                <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/6841_88291_000006_000000_ssrspeech.wav" type="audio/wav">
-                </audio></td>
-                <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/6841_88291_000006_000000_ve_mytest.wav" type="audio/wav">
-                </audio></td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/6841_88291_000006_000000_ve.wav" type="audio/wav">
-                </audio></td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/6841_88291_000006_000000_valle.wav" type="audio/wav">
-                </audio></td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/6841_88291_000006_000000_xtts.wav" type="audio/wav">
-                </audio></td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/6841_88291_000006_000000_fs.wav" type="audio/wav">
-                </audio></td>
-            </tr>
-            <tr>
-              <td width="28%" style="text-align: left;">i don't wanna make it as a thing where i'm absolving myself of any
-                responsibility.</td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000108_S0000041_prompt.wav" type="audio/wav">
-                </audio></td>
-                <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000108_S0000041_ssrspeech.wav" type="audio/wav">
-                </audio></td>
-                <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000108_S0000041_ve_mytest.wav" type="audio/wav">
-                </audio></td>
-                <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000108_S0000041_ve.wav" type="audio/wav">
-                </audio></td>
-                <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000108_S0000041_valle.wav" type="audio/wav">
-                </audio></td>
-                <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000108_S0000041_xtts.wav" type="audio/wav">
-                </audio></td>
-                <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000108_S0000041_fs.wav" type="audio/wav">
-                </audio></td>
-              </tr>
-            
-            <tr>
-              <td width="28%" style="text-align: left;">and the only way to do great work is to love what you do. if you haven't found it yet, keep looking.</td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000102_S0000180_prompt.wav" type="audio/wav">
-                </audio></td>
-                <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000102_S0000180_ssrspeech.wav" type="audio/wav">
-                </audio></td>
-                <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000102_S0000180_ve_mytest.wav" type="audio/wav">
-                </audio></td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000102_S0000180_ve.wav" type="audio/wav">
-                </audio></td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000102_S0000180_valle.wav" type="audio/wav">
-                </audio></td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000102_S0000180_xtts.wav" type="audio/wav">
-                </audio></td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000102_S0000180_fs.wav" type="audio/wav">
-                </audio></td>
-            </tr>
-            <tr>
-              <td width="28%" style="text-align: left;">blank space because i'd written a lot of lines down already in the year
-                preceding the session.</td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000106_S0000024_prompt.wav" type="audio/wav">
-                </audio></td>
-                <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000106_S0000024_ssrspeech.wav" type="audio/wav">
-                </audio></td>
-                <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000106_S0000024_ve_mytest.wav" type="audio/wav">
-                </audio></td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000106_S0000024_ve.wav" type="audio/wav">
-                </audio></td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000106_S0000024_valle.wav" type="audio/wav">
-                </audio></td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000106_S0000024_xtts.wav" type="audio/wav">
-                </audio></td>
-              <td width="12%" style="text-align: center;"><audio controls="">
-                  <source src="static/audio_sample/tts/YOU1000000106_S0000024_fs.wav" type="audio/wav">
-                </audio></td>
-            </tr>
-            </tbody>
-            </table>
-            </div>
-                    <div class="columns is-centered has-text-centered">
-                      <div class="column is-four-fifths">
-                        <a href="#toc" class="button is-primary">Go Back to Table of Contents</a>
-                      </div>
-                    </div>
-            </div>
-            </div>
-            </section>
-
-
-<!-- <section class="section" id="BibTeX">
+<section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{peng2024voicecraft,
-  author    = {Peng, Puyuan and Li, Shang-Wen and Huang, Po-Yao and Mohamed, Abdelrahman and Harwath, David},
-  title     = {VoiceCraft: Zero-Shot Speech Editing and Text-to-Speech in the Wild},
-  journal   = {ACL},
+    <pre><code>@article{helin2024soloaudio,
+  author    = {Wang, Helin and Hai, Jiarui and Lu, Yen-Ju and Thakkar, Karan and Elhilali, Mounya and Dehak, Najim},
+  title     = {SoloAudio: Target Sound Extraction with Language-oriented Audio Diffusion Transformer},
+  journal   = {arXiv},
   year      = {2024},
 }</code></pre>
   </div>
-</section> -->
+</section>
 
 
 <footer class="footer">
